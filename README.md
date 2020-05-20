@@ -2,6 +2,11 @@
 
 Assignee: **_Toan Quoc Ho_**
 
+#### Prerequisite:
+
+- Node version: 10.16.1
+- Yarn version: 1.21.1
+
 #### About the approach:
 
 - I've used React Hooks to handle the component state and to fetch data from APIs.

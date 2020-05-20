@@ -41,11 +41,11 @@ function debouncedLoadCities(searchString, callback) {
 }
 
 export default function Home() {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState(null);
 
   return (<Container className="mt-5">
     <div className="w-50">
-      <AsyncSelect loadOptions={debouncedLoadCities} onChange={(selectedCity) => {
+      <AsyncSelect placeholder="Search city..." className="select-box" loadOptions={debouncedLoadCities} onChange={(selectedCity) => {
         setCity(selectedCity);
       }} />
     </div>

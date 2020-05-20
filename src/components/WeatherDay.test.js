@@ -11,6 +11,7 @@ const weather = {
   max_temp: 33.815
 };
 
-test('renders without crashing', () => {
-  render(<WeatherDay weather={weather} />);
+test('renders correctly and without crashing', () => {
+  const { container } = render(<WeatherDay weather={weather} />);
+  expect(container).toMatchSnapshot();
 });

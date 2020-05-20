@@ -17,7 +17,7 @@ export default function WeatherDay(props) {
 
   return (
     <Col xs={12} sm={6} md={4} lg={2} className="text-center mt-4">
-      <div className="border p-3">
+      <div className="border rounded p-3">
         <p>{weekday[day]}</p>
         <img className="w-50" alt="Weather icon" src={`https://www.metaweather.com/static/img/weather/${weather.weather_state_abbr}.svg`} />
         <p className="mt-3 mb-0">Min: {parseInt(weather.min_temp)}</p>

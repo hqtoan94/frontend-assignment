@@ -15,7 +15,7 @@ export default function WeatherContainer(props) {
         `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${city.value}/`
       );
 
-      let consolidatedWeather = (response?.data.consolidated_weather || []).slice(1, 6);
+      let consolidatedWeather = (response?.data?.consolidated_weather || []).slice(1, 6);
       setConsolidatedWeather(consolidatedWeather);
       setIsFetchingData(false);
     };
@@ -25,8 +25,8 @@ export default function WeatherContainer(props) {
   }, [city.value]);
 
   return (<div>
-    <h3 className="m-0">Five day weather forecast of: <i>{city.label}</i></h3>
-    <div className="row justify-content-center mt-5">
+    <h3 className="m-0">Five day weather forecast in: <i>{city.label}</i></h3>
+    <div className="weather-container row justify-content-center mt-5">
       {isFetchingData ? (
         <p className="col-12">Fetching weather data</p>
       ) : consolidatedWeather.map(weather => (<WeatherDay key={weather.id} weather={weather} />))
